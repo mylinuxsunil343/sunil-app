@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
+/*
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,25 @@ function App() {
           Learn React
         </a>
       </header>
+    </div>
+  );
+}
+*/
+import React from 'react';
+import Banner from './Banner';
+import DatePicker from './DatePicker';
+import GenderRadioButton from './GenderRadioButton';
+import Salary from './Salary';
+import LifestyleChoices from './LifeStyle';
+
+function App() {
+  return (
+    <div>
+      <Banner message="Welcome to MM - Life Insurance at your fingertips!" />
+      <DatePicker />
+      <GenderRadioButton />
+      <Salary />
+      <LifestyleChoices />
     </div>
   );
 }

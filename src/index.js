@@ -4,7 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Myfunc from './myfunc.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+/*
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import NoPage from "./pages/NoPage";
+
+export default function Apps() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 const Header = () => {
   const myStyle = {
@@ -25,6 +48,7 @@ function Details() {
   const det = {color: "red", name: "Marella"};
   return (
     <>
+
     <Header />
     <p>This is 2nd function</p>
     <Alerting />
@@ -123,9 +147,42 @@ const myElement = (
 
 );
 
-const root = ReactDOM.createRoot(document.getElementById('my_root'));
-root.render(myElement);
+
+function Myhook() {
+//  const [colour, setColour] = useState("Red");
+    const [colour, setColour] = useState("");
+ 
+    const [car, setCar] = useState({
+
+      brand: "Ford",
+      model: "Mustang",
+      yesr: "1964"
+    });
+
+    return (
+    <>
+    <h1>You picked colour {colour} and brand {car.brand}, {car.model} model </h1>
+    <button type="button" onClick={()=> setColour("Blue")}>Blue</button>
+    <button type="button" onClick={()=> setColour("Red")}>Red</button>
+    <button type="button" onClick={()=> setColour("Yellow")}>Yellow</button>
+    <button type="button" onClick={()=> setColour("Orange")}>Orange</button>
+  </>
+  );
+}
 */
+
+/*
+useState accepts an initial state and returns two values:
+
+- The current state.
+- A function that updates the state.
+
+*/
+
+
+const root = ReactDOM.createRoot(document.getElementById('my_root'));
+root.render(<App />);
+
 /*
 
 
