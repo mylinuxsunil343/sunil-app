@@ -4,16 +4,35 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Myfunc from './myfunc.js';
+import { useState } from 'react';
+
+const Header = () => {
+  const myStyle = {
+    color: "white",
+    backgroundColor: "Orange",
+    padding: "10px",
+    fontFamily: "Sans-Serif"
+  };
+  return (
+    <>
+      <h1 style={myStyle}>Hello Style!</h1>
+      <p>Add a little style!</p>
+    </>
+  );
+}
 
 function Details() {
   const det = {color: "red", name: "Marella"};
   return (
     <>
+    <Header />
     <p>This is 2nd function</p>
     <Alerting />
     <Myfunc propert={ det } />
     <Garage />
     <Locations />
+    <Myform />
+    <MyDropdown />
     </>
   )
 }
@@ -57,6 +76,40 @@ function Locations() {
 }
 function Location(props2) {
   return <li>I located in { props2.Location }</li>
+}
+function Myform() {
+  const [name, setName] = useState("");
+    const HandleSubmit = (event) => {
+      event.preventDefault();
+      alert(`You entered ${name}`)
+    }
+  return(
+    <form onSubmit={HandleSubmit}>
+      <labell>Enter your name: 
+        <input type="text" value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
+      </labell>
+      <input type="submit" />
+    </form>
+  );
+}
+
+function MyDropdown() {
+  const [MyCar, setMyCar] = useState("Volvo");
+  const handleChange = (event) => {
+    setMyCar(event.target.value)
+  }
+  return (
+    <form>
+      <selct value={MyCar} onChange={handleChange}>
+      <option value="Ford">Ford</option>
+      <option value="Volvo">Volvo</option>
+      <option value="Fiat">Fiat</option>
+      </selct>
+      <input type="submit"></input>
+    </form>
+  )
 }
 const root = ReactDOM.createRoot(document.getElementById('my_root'));
 root.render(<Details />);
