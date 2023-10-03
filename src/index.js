@@ -12,6 +12,8 @@ function Details() {
     <p>This is 2nd function</p>
     <Alerting />
     <Myfunc propert={ det } />
+    <Garage />
+    <Locations />
     </>
   )
 }
@@ -22,6 +24,39 @@ function Alerting() {
   return (
     <button onClick={shoot}>Take the shot!</button>
   );
+}
+// --------------------------------
+function Garage() {
+  const cars = ['Ford', 'TATA']
+  return(
+    <>
+    <p>Who lives in garage</p>
+    <ul>
+      {cars.map((car) => <Car brand={ car } />)}
+    </ul>
+    </>
+  );
+  function Car(props) {
+    return <li>I am a { props.brand }</li>;
+  }
+}
+//--------------------------------------
+function Locations() {
+  const city = [
+    {id: 1, naam: 'Vijayawada'},
+    {id: 2, naam: 'blr'}
+  ];
+  return(
+    <>
+    <h1>My location</h1>
+    <ul>
+      {city.map((location) => <Location key={location.id} naam={location.naam}/>)}
+    </ul>
+    </>
+  );
+}
+function Location(props2) {
+  return <li>I located in { props2.Location }</li>
 }
 const root = ReactDOM.createRoot(document.getElementById('my_root'));
 root.render(<Details />);
