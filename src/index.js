@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Myfunc from './myfunc.js';
-import { useState, useEffect } from 'react';
+// import Myfunc from './myfunc.js';
+// import { useState, useEffect } from 'react';
 
 /*
 import { BrowserRouter, Routes, Route } from "react-router-dom";
