@@ -9,43 +9,47 @@ const GenderRadioButton = () => {
 
   return (
     <div>
-      <p>Please select your gender:</p>
-      <div>
-        <input
-          type="radio"
-          id="male"
-          name="gender"
-          value="Male"
-          onChange={handleGenderChange}
-          checked={gender === 'Male'}
-        />
-        <label htmlFor="male">Male</label>
+      <label>Gender:</label>
+      <div style={{ display: 'inline-flex', marginLeft: '10px' }}>
+        <label>
+          <input
+            type="radio"
+            value="Male"
+            checked={gender === 'Male'}
+            onChange={handleGenderChange}
+          />
+          A. Male
+        </label>
+        <label style={{ marginLeft: '10px' }}>
+          <input
+            type="radio"
+            value="Female"
+            checked={gender === 'Female'}
+            onChange={handleGenderChange}
+          />
+          B. Female
+        </label>
+        <label style={{ marginLeft: '10px' }}>
+          <input
+            type="radio"
+            value="Non-binary"
+            checked={gender === 'Non-binary'}
+            onChange={handleGenderChange}
+          />
+          C. Non-binary
+        </label>
+        <label style={{ marginLeft: '10px' }}>
+          <input
+            type="radio"
+            value="Prefer not to say"
+            checked={gender === 'Prefer not to say'}
+            onChange={handleGenderChange}
+          />
+          D. Prefer not to say
+        </label>
       </div>
-      <div>
-        <input
-          type="radio"
-          id="female"
-          name="gender"
-          value="Female"
-          onChange={handleGenderChange}
-          checked={gender === 'Female'}
-        />
-        <label htmlFor="female">Female</label>
-      </div>
-      <div>
-        <input
-          type="radio"
-          id="others"
-          name="gender"
-          value="Others"
-          onChange={handleGenderChange}
-          checked={gender === 'Others'}
-        />
-        <label htmlFor="others">Others</label>
-      </div>
-      {gender && <p>Your selected gender is: {gender}</p>}
     </div>
   );
-}
+};
 
 export default GenderRadioButton;
